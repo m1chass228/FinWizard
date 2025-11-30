@@ -1,0 +1,20 @@
+# Qt — всё, что генерится при сборке
+build*/
+Debug/
+Release/
+*.pro.user
+*.pro.user.*
+Makefile
+*.o
+*.obj
+moc_*
+ui_*.h
+qrc_*.cpp
+
+# Qt Creator
+*.autosave
+*.tmp
+
+# Если используешь CMake
+cmake-build-*/
+CMakeLists.txt.user*
