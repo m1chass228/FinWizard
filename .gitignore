@@ -16,6 +16,7 @@ qrc_*.cpp
 # Qt Creator
 *.autosave
 *.tmp
+*.user
 
 # Если используешь CMake
 cmake-build-*/
