@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/suse-pc/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/FinWizard/FinWizard v5.0/build/Desktop-Debug/cmake_install.cmake",
+		"/home/suse-pc/\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b/FinWizard/FinWizard v5.0/build/Desktop-Debug/QXlsx_build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

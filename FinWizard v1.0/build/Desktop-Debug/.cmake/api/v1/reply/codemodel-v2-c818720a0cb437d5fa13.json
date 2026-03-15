@@ -1,0 +1,140 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "QXlsx_build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-QXlsx_build-Debug-75330689b388ead09f37.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "QXlsx/QXlsx",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Raz_ZP_qt",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "QXlsx",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "QXlsx::@aeaa57870b3ae4bc87a7",
+					"jsonFile" : "target-QXlsx-Debug-1ad2bc1f9c088e14e7ee.json",
+					"name" : "QXlsx",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "QXlsx_autogen::@aeaa57870b3ae4bc87a7",
+					"jsonFile" : "target-QXlsx_autogen-Debug-472411f7b8f7bca66261.json",
+					"name" : "QXlsx_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "QXlsx_autogen_timestamp_deps::@aeaa57870b3ae4bc87a7",
+					"jsonFile" : "target-QXlsx_autogen_timestamp_deps-Debug-8dd77b3c86788b44f317.json",
+					"name" : "QXlsx_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Raz_ZP_qt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Raz_ZP_qt-Debug-82f1ca00d5f9278af9d8.json",
+					"name" : "Raz_ZP_qt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Raz_ZP_qt_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Raz_ZP_qt_autogen-Debug-87c269e06781d9675920.json",
+					"name" : "Raz_ZP_qt_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Raz_ZP_qt_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Raz_ZP_qt_autogen_timestamp_deps-Debug-768ea8aed2dcf3f3be31.json",
+					"name" : "Raz_ZP_qt_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/igor/ui_raz_ZP_qt/build/Desktop-Debug",
+		"source" : "/home/igor/ui_raz_ZP_qt"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

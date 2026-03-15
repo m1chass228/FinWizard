@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QDebug>
 #include <QWidget>
+#include <QStyleFactory>
 #include <finwizard/pluginmanager.h>
 
 #include "mainwindow.h"
@@ -9,6 +10,8 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
 
     QCoreApplication::setOrganizationName("FinWizard");
     QCoreApplication::setApplicationName("FinWizardGui");

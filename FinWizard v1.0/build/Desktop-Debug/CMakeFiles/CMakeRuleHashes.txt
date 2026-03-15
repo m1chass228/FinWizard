@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+d8ff78149fa94e72458439504b3284db CMakeFiles/Raz_ZP_qt_autogen
+a8d65dc7b44b5c6342e90e3d3845f4cc QXlsx_build/CMakeFiles/QXlsx_autogen
+e40f9cbb61488169f090d92699e74921 QXlsx_build/QXlsx_autogen/timestamp
+bc7a4b17792bbc3bb3c9623117848a9d Raz_ZP_qt_autogen/timestamp

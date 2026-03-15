@@ -1,0 +1,4 @@
+/home/suse-pc/Документы/FinWizard/FinWizard Engine/build/Desktop-Debug/CMakeFiles/core.dir
+/home/suse-pc/Документы/FinWizard/FinWizard Engine/build/Desktop-Debug/CMakeFiles/engine.dir
+/home/suse-pc/Документы/FinWizard/FinWizard Engine/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/suse-pc/Документы/FinWizard/FinWizard Engine/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir

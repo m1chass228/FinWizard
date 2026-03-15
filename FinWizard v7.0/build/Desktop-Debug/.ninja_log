@@ -1,0 +1,85 @@
+# ninja log v6
+1	366	1768644691830387029	QXlsx_build/QXlsx_autogen/timestamp	ec6a9af75cec488
+1	366	1768644691830387029	QXlsx_build/QXlsx_autogen/mocs_compilation.cpp	ec6a9af75cec488
+1	366	1768644691830387029	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/QXlsx_build/QXlsx_autogen/timestamp	ec6a9af75cec488
+1	366	1768644691830387029	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/QXlsx_build/QXlsx_autogen/mocs_compilation.cpp	ec6a9af75cec488
+388	2355	1768644691865044979	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxabstractsheet.cpp.o	4f03d16aa587c144
+375	2664	1768644691852082404	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxabstractooxmlfile.cpp.o	d1a796c9283a705c
+385	2879	1768644691861387551	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdrawing.cpp.o	d5418c3255fb3559
+369	3313	1768644691846634129	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcontenttypes.cpp.o	1b196f1ebb76bc40
+370	3684	1768644691847028290	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdrawinganchor.cpp.o	67be53835a03ac11
+369	3770	1768644691845387282	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcellrange.cpp.o	4ed3021c04b85c74
+372	3871	1768644691848665641	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxrichstring.cpp.o	83a8a04c94246275
+379	3958	1768644691855387450	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcellreference.cpp.o	a9d616704a878bc3
+366	3969	1768644691843215279	QXlsx_build/CMakeFiles/QXlsx.dir/QXlsx_autogen/mocs_compilation.cpp.o	832cd028c3d7021d
+2355	4407	1768644693831420716	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdatetype.cpp.o	a6829506ee836432
+386	4810	1768644691862387568	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxsharedstrings.cpp.o	37af2f4f73094525
+2879	5009	1768644694355429536	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxsimpleooxmlfile.cpp.o	5b22e925d31a8fe6
+388	5496	1768644691865155559	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxchart.cpp.o	9796831263345dc2
+3313	5699	1768644694789436840	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxzipreader.cpp.o	9a431a828bf2a657
+382	5782	1768644691858387501	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdatavalidation.cpp.o	e6d28467c513f6a6
+2664	5810	1768644694140425917	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxformat.cpp.o	ed932a80096a12ae
+3958	6098	1768644695434447695	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxmediafile.cpp.o	b21bb5e3d221988f
+3684	6236	1768644695160443084	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcell.cpp.o	5ca905464ba90ec8
+3770	6473	1768644695246444531	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxchartsheet.cpp.o	d543f261168c1ff
+3871	6878	1768644695347446231	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdocpropsapp.cpp.o	a5578b98b378a759
+375	6894	1768644691851387383	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxworkbook.cpp.o	35b682928cba4bfa
+4810	7195	1768644696286462031	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcellformula.cpp.o	941726c12e1c447c
+4407	7260	1768644695883455251	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxzipwriter.cpp.o	b25b97b5010963f6
+5699	7454	1768644697175476988	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxnumformatparser.cpp.o	be773f0bbb6aa3c9
+388	7524	1768644691864387602	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxworksheet.cpp.o	a870524f8995ed66
+5810	7544	1768644697286478855	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcelllocation.cpp.o	21606acc83ed3575
+5782	7556	1768644697258478385	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxtheme.cpp.o	151349b7ae8c17fb
+5009	7693	1768644696485465379	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxcolor.cpp.o	7b08895e9665177d
+5496	8127	1768644696972473573	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdocpropscore.cpp.o	38e4978b84c82516
+6473	8618	1768644697949490009	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxrelationships.cpp.o	cec61c13cbda1331
+6878	8889	1768644698354496820	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxutility.cpp.o	69464a9c4db3b14
+3969	9057	1768644695445447880	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxstyles.cpp.o	331e40007a82b39f
+6098	9076	1768644697574483700	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxconditionalformatting.cpp.o	d5b4203d440c9c7d
+6236	9469	1768644697712486022	QXlsx_build/CMakeFiles/QXlsx.dir/source/xlsxdocument.cpp.o	84d7799a5ec5ecde
+9469	9917	1768644700945540391	QXlsx_build/libQXlsxQt6.a	fd1a251397fd2a17
+9917	10682	1768644702152921656	Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+9917	10682	1768644702152921656	Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+9917	10682	1768644702152921656	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+9917	10682	1768644702152921656	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+10683	13903	1768644702160496957	CMakeFiles/Raz_ZP_qt.dir/utils.cpp.o	62cbadd9d68f800a
+10683	13920	1768644702160651488	CMakeFiles/Raz_ZP_qt.dir/logger.cpp.o	ec93876cb141ae09
+10683	13964	1768644702159991875	CMakeFiles/Raz_ZP_qt.dir/main.cpp.o	59ccfed23ea25e48
+10683	14053	1768644702159560800	CMakeFiles/Raz_ZP_qt.dir/Raz_ZP_qt_autogen/mocs_compilation.cpp.o	8416fbd5eb3ad995
+10685	14137	1768644702162127838	CMakeFiles/Raz_ZP_qt.dir/algorithms/birulyovo_svodni/biruovo.cpp.o	c34d58326ee1e3e6
+10683	14174	1768644702160378541	CMakeFiles/Raz_ZP_qt.dir/algorithmregistry.cpp.o	2643ddbf7a67d32e
+10690	14190	1768644702166560917	CMakeFiles/Raz_ZP_qt.dir/algorithms/marjino_kolomenskaya_svodni/marjino_kolomenkaya.cpp.o	f8ec5bc06d30c507
+10684	14404	1768644702160788873	CMakeFiles/Raz_ZP_qt.dir/list_algorithms.cpp.o	3171aa5d018d199d
+10683	14446	1768644702160235045	CMakeFiles/Raz_ZP_qt.dir/mainwindow.cpp.o	f9678b9f5ab7f7fd
+10685	14450	1768644702161560833	CMakeFiles/Raz_ZP_qt.dir/list_done_files.cpp.o	82f25310bc3cea2b
+10684	14543	1768644702161560698	CMakeFiles/Raz_ZP_qt.dir/list_files.cpp.o	28ebdc7ebd3a810a
+14543	14818	1768644706019625663	Raz_ZP_qt	6491d650cb2d1d0d
+4	39	1768645236455255946	Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+4	39	1768645236455255946	Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+4	39	1768645236455255946	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+4	39	1768645236455255946	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+40	2157	1768645236491256518	CMakeFiles/Raz_ZP_qt.dir/list_algorithms.cpp.o	3171aa5d018d199d
+40	2181	1768645236492687311	CMakeFiles/Raz_ZP_qt.dir/list_done_files.cpp.o	82f25310bc3cea2b
+39	2200	1768645236490256502	CMakeFiles/Raz_ZP_qt.dir/mainwindow.cpp.o	f9678b9f5ab7f7fd
+40	2222	1768645236492430213	CMakeFiles/Raz_ZP_qt.dir/list_files.cpp.o	28ebdc7ebd3a810a
+2222	2438	1768645238673291200	Raz_ZP_qt	6491d650cb2d1d0d
+6	47	1768645869802646171	Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+6	47	1768645869802646171	Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+6	47	1768645869802646171	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+6	47	1768645869802646171	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+48	1927	1768645869844948863	CMakeFiles/Raz_ZP_qt.dir/utils.cpp.o	62cbadd9d68f800a
+48	2064	1768645869844647099	CMakeFiles/Raz_ZP_qt.dir/algorithmregistry.cpp.o	2643ddbf7a67d32e
+48	2349	1768645869845384601	CMakeFiles/Raz_ZP_qt.dir/list_done_files.cpp.o	82f25310bc3cea2b
+48	2945	1768645869845115489	CMakeFiles/Raz_ZP_qt.dir/list_algorithms.cpp.o	3171aa5d018d199d
+47	2975	1768645869843647077	CMakeFiles/Raz_ZP_qt.dir/mainwindow.cpp.o	f9678b9f5ab7f7fd
+3	21	1768645955504500485	Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+3	21	1768645955504500485	Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+3	21	1768645955504500485	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/timestamp	7b98327aaf27bfa6
+3	21	1768645955504500485	/home/igor/FinWizard/FinWizard v6.0/build/Desktop-Debug/Raz_ZP_qt_autogen/mocs_compilation.cpp	7b98327aaf27bfa6
+21	2053	1768645955523572970	CMakeFiles/Raz_ZP_qt.dir/algorithms/birulyovo_svodni/biruovo.cpp.o	c34d58326ee1e3e6
+21	2113	1768645955523677144	CMakeFiles/Raz_ZP_qt.dir/algorithms/marjino_kolomenskaya_svodni/marjino_kolomenkaya.cpp.o	f8ec5bc06d30c507
+21	2217	1768645955523222725	CMakeFiles/Raz_ZP_qt.dir/list_algorithms.cpp.o	3171aa5d018d199d
+21	2278	1768645955523434711	CMakeFiles/Raz_ZP_qt.dir/list_done_files.cpp.o	82f25310bc3cea2b
+21	2308	1768645955522500867	CMakeFiles/Raz_ZP_qt.dir/mainwindow.cpp.o	f9678b9f5ab7f7fd
+21	2323	1768645955523349058	CMakeFiles/Raz_ZP_qt.dir/list_files.cpp.o	28ebdc7ebd3a810a
+2323	2542	1768645957824549637	Raz_ZP_qt	6491d650cb2d1d0d
