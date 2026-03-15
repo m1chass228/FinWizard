@@ -20,7 +20,6 @@ jobs:
           host: 'windows'
           target: 'desktop'
           arch: 'win64_msvc2019_64'
-          # Добавляем модуль совместимости, который просил quazip
           modules: 'qt5compat'
 
       - name: Устанавливаем ZLIB (vcpkg)
@@ -29,7 +28,6 @@ jobs:
           vcpkg integrate install
 
       - name: Настраиваем CMake
-        # Флаг -S FinWizard_dll говорит CMake искать корень проекта там
         run: cmake -B build -S FinWizard_dll -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
 
       - name: Собираем проект
@@ -40,7 +38,6 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path FinWizard_Release
 
-          # Автоматический поиск EXE в папке сборки
           $exeFile = Get-ChildItem -Path build -Filter FinWizardGui.exe -Recurse | Select-Object -First 1
           if ($exeFile) {
               Copy-Item $exeFile.FullName -Destination FinWizard_Release\
@@ -50,14 +47,34 @@ jobs:
               exit 1
           }
 
-          # Копируем zlib.dll
           Copy-Item "$env:VCPKG_INSTALLATION_ROOT\installed\x64-windows\bin\zlib1.dll" -Destination FinWizard_Release\
-
-          # Подтягиваем зависимости Qt
           windeployqt FinWizard_Release\FinWizardGui.exe
+
+      - name: Собираем установщик (Inno Setup)
+        shell: pwsh
+        run: |
+          # Создаем папку для готового Setup.exe
+          New-Item -ItemType Directory -Force -Path Output
+
+          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+          $sourceDir = "$pwd\FinWizard_Release"
+          $outDir = "$pwd\Output"
+
+          # Автоматически ищем файл setup.iss в репозитории
+          $issFile = Get-ChildItem -Path . -Filter setup.iss -Recurse | Select-Object -First 1
+
+          if ($issFile) {
+              Write-Host "Found ISS at: $($issFile.FullName)"
+              # Запускаем Inno Setup, передавая ему пути через макросы
+              & $iscc /DMySourceDir="$sourceDir" /DMyOutDir="$outDir" $issFile.FullName
+          } else {
+              Write-Error "Файл setup.iss не найден!"
+              exit 1
+          }
 
       - name: Загружаем готовый результат
         uses: actions/upload-artifact@v4
         with:
-          name: FinWizard-Windows-App
-          path: FinWizard_Release\
+          name: FinWizard-Windows-Installer
+          # Загружаем только папку Output, где лежит наш Setup.exe
+          path: Output\
