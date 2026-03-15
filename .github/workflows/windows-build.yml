@@ -20,6 +20,8 @@ jobs:
           host: 'windows'
           target: 'desktop'
           arch: 'win64_msvc2019_64'
+          # Добавляем модуль совместимости, который просил quazip
+          modules: 'qt5compat'
 
       - name: Устанавливаем ZLIB (vcpkg)
         run: |
@@ -27,7 +29,7 @@ jobs:
           vcpkg integrate install
 
       - name: Настраиваем CMake
-        # ВАЖНО: Добавили -S FinWizard_dll, так как корень проекта там
+        # Флаг -S FinWizard_dll говорит CMake искать корень проекта там
         run: cmake -B build -S FinWizard_dll -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
 
       - name: Собираем проект
@@ -38,13 +40,20 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path FinWizard_Release
 
-          # Копируем EXE. Используем поиск, так как путь может отличаться (build/src/gui/Release/...)
-          Get-ChildItem -Path build -Filter FinWizardGui.exe -Recurse | Copy-Item -Destination FinWizard_Release\
+          # Автоматический поиск EXE в папке сборки
+          $exeFile = Get-ChildItem -Path build -Filter FinWizardGui.exe -Recurse | Select-Object -First 1
+          if ($exeFile) {
+              Copy-Item $exeFile.FullName -Destination FinWizard_Release\
+              Write-Host "Found EXE at: $($exeFile.FullName)"
+          } else {
+              Write-Error "FinWizardGui.exe не найден в папке build!"
+              exit 1
+          }
 
-          # Копируем zlib.dll из папки vcpkg
+          # Копируем zlib.dll
           Copy-Item "$env:VCPKG_INSTALLATION_ROOT\installed\x64-windows\bin\zlib1.dll" -Destination FinWizard_Release\
 
-          # Запускаем сборку зависимостей Qt
+          # Подтягиваем зависимости Qt
           windeployqt FinWizard_Release\FinWizardGui.exe
 
       - name: Загружаем готовый результат
