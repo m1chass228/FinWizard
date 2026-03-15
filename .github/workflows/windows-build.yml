@@ -3,7 +3,7 @@ name: Windows Build
 on:
   push:
     branches: [ "dev", "main", "master" ]
-  workflow_dispatch: # Позволяет запускать сборку вручную кнопкой
+  workflow_dispatch:
 
 jobs:
   build-windows:
@@ -22,17 +22,22 @@ jobs:
           arch: 'win64_msvc2019_64'
 
       - name: Настраиваем CMake
-        run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+        # Указываем -S FinWizard_dll, так как CMakeLists.txt лежит там
+        run: cmake -B build -S FinWizard_dll -DCMAKE_BUILD_TYPE=Release
 
       - name: Собираем проект
         run: cmake --build build --config Release
 
       - name: Подготавливаем файлы (windeployqt)
+        shell: pwsh
         run: |
           mkdir FinWizard_Release
-          # Копируем наш скомпилированный EXE
-          copy build\src\gui\Release\FinWizardGui.exe FinWizard_Release\
-          # Магическая команда Qt: она сама найдет и скопирует все нужные .dll файлы рядом с exe!
+          # Путь к EXE теперь будет зависеть от того, как прописано в CMakeLists.txt
+          # Обычно это build/src/Release/ или build/Release/
+          # Я использую маску *, чтобы он точно нашел файл
+          Get-ChildItem -Path build -Filter FinWizardGui.exe -Recurse | Copy-Item -Destination FinWizard_Release\
+
+          # Запускаем деплоймент
           windeployqt FinWizard_Release\FinWizardGui.exe
 
       - name: Загружаем готовый результат
