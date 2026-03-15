@@ -1,0 +1,42 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [ "dev", "main", "master" ]
+  workflow_dispatch: # Позволяет запускать сборку вручную кнопкой
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Скачиваем код
+        uses: actions/checkout@v4
+
+      - name: Устанавливаем Qt 6
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.6.0'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+
+      - name: Настраиваем CMake
+        run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+
+      - name: Собираем проект
+        run: cmake --build build --config Release
+
+      - name: Подготавливаем файлы (windeployqt)
+        run: |
+          mkdir FinWizard_Release
+          # Копируем наш скомпилированный EXE
+          copy build\src\gui\Release\FinWizardGui.exe FinWizard_Release\
+          # Магическая команда Qt: она сама найдет и скопирует все нужные .dll файлы рядом с exe!
+          windeployqt FinWizard_Release\FinWizardGui.exe
+
+      - name: Загружаем готовый результат
+        uses: actions/upload-artifact@v4
+        with:
+          name: FinWizard-Windows-App
+          path: FinWizard_Release\
