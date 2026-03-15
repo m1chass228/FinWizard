@@ -21,23 +21,26 @@ jobs:
           target: 'desktop'
           arch: 'win64_msvc2019_64'
 
+      # ---- ДОБАВЛЕНО: Установка ZLIB через vcpkg ----
+      - name: Устанавливаем ZLIB (vcpkg)
+        run: |
+          vcpkg install zlib:x64-windows
+          vcpkg integrate install
+      # -----------------------------------------------
+
+      # ВАЖНО: Добавили путь к vcpkg в команду CMake, чтобы он нашел ZLIB
       - name: Настраиваем CMake
-        # Указываем -S FinWizard_dll, так как CMakeLists.txt лежит там
-        run: cmake -B build -S FinWizard_dll -DCMAKE_BUILD_TYPE=Release
+        run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
 
       - name: Собираем проект
         run: cmake --build build --config Release
 
       - name: Подготавливаем файлы (windeployqt)
-        shell: pwsh
         run: |
           mkdir FinWizard_Release
-          # Путь к EXE теперь будет зависеть от того, как прописано в CMakeLists.txt
-          # Обычно это build/src/Release/ или build/Release/
-          # Я использую маску *, чтобы он точно нашел файл
-          Get-ChildItem -Path build -Filter FinWizardGui.exe -Recurse | Copy-Item -Destination FinWizard_Release\
-
-          # Запускаем деплоймент
+          copy build\src\gui\Release\FinWizardGui.exe FinWizard_Release\
+          # Копируем саму zlib.dll, чтобы она была рядом с exe!
+          copy "$env:VCPKG_INSTALLATION_ROOT\installed\x64-windows\bin\zlib1.dll" FinWizard_Release\
           windeployqt FinWizard_Release\FinWizardGui.exe
 
       - name: Загружаем готовый результат
