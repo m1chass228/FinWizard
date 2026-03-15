@@ -1,0 +1,73 @@
+{
+  "workflow_id": "daily_fin_report_2026_02",
+  "version": "1.1",
+  "settings": {
+    "stop_on_failure": true,
+    "default_timeout_seconds": 600,
+    "on_failure_action": "notify_slack"
+  },
+  "steps": [
+    {
+      "id": "fetch_api_data",
+      "executor": "http_request",
+      "description": "Скачивание сырых финансовых данных с API",
+      "parameters": {
+        "url": "https://api.finmarket.com/v1/daily-stats",
+        "method": "GET",
+        "headers": {
+          "Authorization": "Bearer ${API_KEY}",
+          "Accept": "application/json"
+        },
+        "timeout": 15
+      },
+      "save_as": "raw_fin_data",
+      "depends_on": [],
+      "timeout_seconds": 30
+    },
+    {
+      "id": "clean_and_transform",
+      "executor": "python_script",
+      "description": "Очистка и преобразование данных (удаление дубликатов, расчёт метрик)",
+      "parameters": {
+        "script_path": "scripts/transform_fin_data.py",
+        "input_key": "raw_fin_data",
+        "output_format": "parquet",
+        "columns_to_keep": ["date", "revenue", "expenses", "profit"]
+      },
+      "save_as": "cleaned_data",
+      "depends_on": ["fetch_api_data"],
+      "timeout_seconds": 120
+    },
+    {
+      "id": "generate_report",
+      "executor": "xlsx_report",
+      "description": "Создание финального отчёта в Excel",
+      "parameters": {
+        "template_path": "templates/fin_report_template.xlsx",
+        "input_key": "cleaned_data",
+        "output_path": "reports/daily_report_${DATE}.xlsx",
+        "sheet_name": "Daily Stats"
+      },
+      "save_as": "report_file",
+      "depends_on": ["clean_and_transform"],
+      "timeout_seconds": 60
+    },
+    {
+      "id": "send_notification",
+      "executor": "slack_notifier",
+      "description": "Отправка уведомления в Slack-канал",
+      "parameters": {
+        "channel": "#fin-reports",
+        "message_template": "Ежедневный отчёт готов! Ссылка: {{report_file}}",
+        "attachments": [
+          {
+            "title": "Отчёт за ${DATE}",
+            "file_key": "report_file"
+          }
+        ]
+      },
+      "depends_on": ["generate_report"],
+      "timeout_seconds": 10
+    }
+  ]
+}

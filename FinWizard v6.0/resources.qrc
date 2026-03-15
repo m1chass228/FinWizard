@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/python-prefix">
+        <file>PythonBot.py</file>
+    </qresource>
+</RCC>

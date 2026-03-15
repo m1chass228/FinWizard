@@ -19,9 +19,19 @@ public:
     void logMessage(const QString& message, const QString& color = "black");
 
 private:
+    // algo list
     void loadAlgorithmsIntoUI();
+    // start butt
     void onRunClicked();
+    // algo click
     void onAlgorithmSelected();
+
+    // toolbar actions
+    void onAddFile();
+    void onRemoveFile();
+    void onClearAll();
+    void onOpenDir();
+
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
